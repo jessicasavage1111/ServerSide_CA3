@@ -10,16 +10,7 @@ $statement->execute();
 $record = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
-<!DOCTYPE html>
-<html>
-<!-- the head section -->
-<head>
-    <title>PHP CRUD</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<!-- the body section -->
-<body>
-    <header><h1>PHP CRUD</h1></header>
+<?php include './includes/header.php';?>
     <main>
         <h1>Edit record</h1>
         <form action="edit_record.php" method="post" enctype="multipart/form-data"

@@ -18,6 +18,7 @@ $statement1->execute();
 $category = $statement1->fetch();
 $statement1->closeCursor();
 $category_name = $category['categoryName'];
+
 // Get all categories
 $queryAllCategories = 'SELECT * FROM categories
 ORDER BY categoryID';
@@ -25,6 +26,7 @@ $statement2 = $db->prepare($queryAllCategories);
 $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
+
 // Get records for selected category
 $queryRecords = "SELECT * FROM records
 WHERE categoryID = :category_id
@@ -35,16 +37,7 @@ $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-<!DOCTYPE html>
-<html>
-<!-- the head section -->
-<head>
-<title>PHP CRUD</title>
-<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<!-- the body section -->
-<body>
-<header><h1>Cake Shop</h1></header>
+<?php include './includes/header.php';?>
 <main>
 <h1>Record List</h1>
 <aside>

@@ -1,3 +1,3 @@
 <footer>
-<p>&copy; <?php echo date("Y"); ?> Its Friday! Cake Shop, Inc.</p>
+<p>&copy; <?php echo date("Y"); ?> Cake Shop, Inc.</p>
 </footer>
