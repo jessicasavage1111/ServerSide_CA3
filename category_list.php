@@ -51,8 +51,6 @@
     <br>
     <p><a href="index.php">Homepage</a></p>
     </main>
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> PHP CRUD, Inc.</p>
-    </footer>
+    <?php include './includes/footer.php';?>
 </body>
 </html>

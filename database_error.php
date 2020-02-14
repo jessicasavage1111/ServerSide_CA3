@@ -14,8 +14,6 @@
         <p>Error message: <?php echo $error_message; ?></p>
         <p>&nbsp;</p>
     </main>
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> My PHP CRUD application, Inc.</p>     
-    </footer>
+    <?php include './includes/footer.php';?>
 </body>
 </html>
