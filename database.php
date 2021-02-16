@@ -1,7 +1,7 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=shop-images';
+    $dsn = 'mysql:host=localhost;dbname=ca2db';
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);
