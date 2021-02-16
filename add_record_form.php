@@ -8,11 +8,15 @@ $statement->execute();
 $categories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
-<?php include './includes/header.php';?>
-    <main>
+<!-- the head section -->
+ <div class="container">
+<?php
+include('includes/header.php');
+?>
         <h1>Add Record</h1>
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
+
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -22,28 +26,23 @@ $statement->closeCursor();
             <?php endforeach; ?>
             </select>
             <br>
-
-            <label>Code:</label>
-            <input type="input" name="code">
-            <br>
-
             <label>Name:</label>
             <input type="input" name="name">
             <br>
 
-            <label>Price:</label>
+            <label>List Price:</label>
             <input type="input" name="price">
-            <br>
-
+            <br>        
+            
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>
+            
             <label>&nbsp;</label>
             <input type="submit" value="Add Record">
             <br>
         </form>
-        <p><a href="index.php">Homepage</a></p>
-    </main>
-    <?php include './includes/footer.php';?>
-</body>
-</html>
+        <p><a href="index.php">View Homepage</a></p>
+    <?php
+include('includes/footer.php');
+?>

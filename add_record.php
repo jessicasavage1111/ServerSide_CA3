@@ -1,27 +1,34 @@
 <?php
-// Get the data
+
+// Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$code = filter_input(INPUT_POST, 'code');
 $name = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-        $code == null || $name == null || $price == null || $price == false) {
-    $error = "Invalid data. Check all fields and try again.";
+    $name == null || $price == null || $price == false ) {
+    $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
 } else {
-// Image upload
+
+    /**************************** Image upload ****************************/
+
     error_reporting(~E_NOTICE); 
+
 // avoid notice
+
     $imgFile = $_FILES['image']['name'];
     $tmp_dir = $_FILES['image']['tmp_name'];
     echo $_FILES['image']['tmp_name'];
     $imgSize = $_FILES['image']['size'];
+
     if (empty($imgFile)) {
         $image = "";
     } else {
         $upload_dir = 'image_uploads/'; // upload directory
+
         $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
         // valid image extensions
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
@@ -49,22 +56,24 @@ if ($category_id == null || $category_id == false ||
             exit();
         }
     }
-// End Image upload
+
+    /************************** End Image upload **************************/
     
     require_once('database.php');
-    // Add the records to the database 
+
+    // Add the product to the database 
     $query = "INSERT INTO records
-                 (categoryID, code, name, price, image)
+                 (categoryID, name, price, image)
               VALUES
-                 (:category_id, :code, :name, :price, :image)";
+                 (:category_id, :name, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
-    $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
-// Display the records List page
+
+    // Display the Product List page
     include('index.php');
 }

@@ -1,7 +1,7 @@
 <?php
-// Connect to the database
 require_once('database.php');
-// Set the default category to the ID of 1
+
+// Get category ID
 if (!isset($category_id)) {
 $category_id = filter_input(INPUT_GET, 'category_id', 
 FILTER_VALIDATE_INT);
@@ -9,6 +9,7 @@ if ($category_id == NULL || $category_id == FALSE) {
 $category_id = 1;
 }
 }
+
 // Get name for current category
 $queryCategory = "SELECT * FROM categories
 WHERE categoryID = :category_id";
@@ -37,11 +38,14 @@ $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
-<?php include './includes/header.php';?>
-<main>
+<div class="container">
+<?php
+include('includes/header.php');
+?>
 <h1>Record List</h1>
+
 <aside>
-<!-- display a list of categories in the sidebar-->
+<!-- display a list of categories -->
 <h2>Categories</h2>
 <nav>
 <ul>
@@ -52,16 +56,16 @@ $statement3->closeCursor();
 </li>
 <?php endforeach; ?>
 </ul>
-</nav>
+</nav>          
 </aside>
+
 <section>
-<!-- display a table of records from the database -->
+<!-- display a table of records -->
 <h2><?php echo $category_name; ?></h2>
 <table>
 <tr>
 <th>Image</th>
 <th>Name</th>
-<th>Code</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -70,8 +74,7 @@ $statement3->closeCursor();
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
-<td><?php echo $record['code']; ?></td>
-<td><?php echo $record['price']; ?></td>
+<td class="right"><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
@@ -92,9 +95,8 @@ value="<?php echo $record['categoryID']; ?>">
 <?php endforeach; ?>
 </table>
 <p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Edit Categories</a></p>
+<p><a href="category_list.php">Manage Categories</a></p>
 </section>
-</main>
-<?php include './includes/footer.php';?>
-</body>
-</html>
+<?php
+include('includes/footer.php');
+?>
