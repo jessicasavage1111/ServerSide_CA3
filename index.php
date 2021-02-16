@@ -66,6 +66,7 @@ include('includes/header.php');
 <tr>
 <th>Image</th>
 <th>Name</th>
+<th>Expiry Date</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -74,6 +75,7 @@ include('includes/header.php');
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
+<td><?php echo $record['expiryDate']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
