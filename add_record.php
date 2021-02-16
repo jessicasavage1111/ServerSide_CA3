@@ -3,6 +3,7 @@
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
+$expiryDate = filter_input(INPUT_POST, 'expiryDate');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
@@ -69,6 +70,7 @@ if ($category_id == null || $category_id == false ||
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
+    $statement->bindValue(':expiryDate', $expiryDate);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();

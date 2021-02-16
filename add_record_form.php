@@ -30,6 +30,11 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
+            <br>
+            <label>Expiry Date:</label>
+            <input type="date" name="expiryDate">
+            <br>
+
             <label>List Price:</label>
             <input type="input" name="price">
             <br>        

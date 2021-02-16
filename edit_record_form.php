@@ -33,6 +33,11 @@ include('includes/header.php');
                    value="<?php echo $records['name']; ?>">
             <br>
 
+            <label>Expiry Date:</label>
+            <input type="date" name="expiryDate"
+                   value="<?php echo $records['expiryDate']; ?>">
+            <br>
+
             <label>List Price:</label>
             <input type="input" name="price"
                    value="<?php echo $records['price']; ?>">
