@@ -6,4 +6,4 @@
 
 <!-- the body section -->
 <body>
-<header><h1>Welcome to my Food Shop</h1></header>
+<header><h1>The Savage Food Shop</h1></header>
