@@ -29,20 +29,20 @@ $categories = $statement2->fetchAll();
 $statement2->closeCursor();
 
 // Get records for selected category
-$queryRecords = "SELECT * FROM records
+$queryRecords = "SELECT * FROM food
 WHERE categoryID = :category_id
-ORDER BY recordID";
+ORDER BY foodID";
 $statement3 = $db->prepare($queryRecords);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$records = $statement3->fetchAll();
+$food = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
 <?php
 include('includes/header.php');
 ?>
-<h1>Record List</h1>
+<h1>Food List</h1>
 
 <aside>
 <!-- display a list of categories -->
@@ -71,32 +71,32 @@ include('includes/header.php');
 <th>Delete</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($records as $record) : ?>
+<?php foreach ($food as $item) : ?>
 <tr>
-<td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-<td><?php echo $record['name']; ?></td>
-<td><?php echo $record['expiryDate']; ?></td>
-<td class="right"><?php echo $record['price']; ?></td>
+<td><img src="image_uploads/<?php echo $item['image']; ?>" width="100px" height="100px" /></td>
+<td><?php echo $item['name']; ?></td>
+<td><?php echo $item['expiryDate']; ?></td>
+<td class="right"><?php echo $item['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
+<input type="hidden" name="food_id"
+value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
+value="<?php echo $item['categoryID']; ?>">
 <input type="submit" value="Delete">
 </form></td>
 <td><form action="edit_record_form.php" method="post"
 id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
+<input type="hidden" name="food_id"
+value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
+value="<?php echo $item['categoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
+<p><a href="add_record_form.php">Add Food</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
 </section>
 <?php

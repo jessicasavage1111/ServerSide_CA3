@@ -25,8 +25,17 @@ header h1 {
   color: black;
 }
 
+nav ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+nav ul li {
+  padding-bottom: 0.5em;
+}
+
 body {
-  font-family: 'PT Sans', sans-serif;
   background-color: #ccc;
 }
 
@@ -61,7 +70,7 @@ a {
   font-weight: bold;
 }
 
-a:hover {
+a :hover {
   color: #d08504;
 }
 
@@ -70,7 +79,7 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
+table td, table th {
   border: 1px dashed black;
   padding: .2em .5em .2em .5em;
   vertical-align: top;
@@ -116,7 +125,7 @@ br {
   float: left;
 }
 
-#add_record_form input[text] {
+#add_record_form input [text] {
   width: 15em;
 }
 

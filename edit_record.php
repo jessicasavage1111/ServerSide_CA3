@@ -1,17 +1,17 @@
 <?php
 
 // Get the record data
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$food_id = filter_input(INPUT_POST, 'food_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $expiryDate = filter_input(INPUT_POST, 'expiryDate');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
-if ($record_id == NULL || $record_id == FALSE || $category_id == NULL ||
-$category_id == FALSE || empty($name) ||
+if ($food_id == NULL || $food_id == FALSE || $category_id == NULL ||
+$category_id == FALSE || empty($name) || $expiryDate == NULL ||
 $price == NULL || $price == FALSE) {
-$error = "Invalid record data. Check all fields and try again.";
+$error = "Invalid food data. Check all fields and try again.";
 include('error.php');
 } else {
 
@@ -49,20 +49,20 @@ $image = $original_image; // old image from database
 // If valid, update the record in the database
 require_once('database.php');
 
-$query = 'UPDATE records
+$query = 'UPDATE food
 SET categoryID = :category_id,
 name = :name,
 expiryDate = :expiryDate,
 price = :price,
 image = :image
-WHERE recordID = :record_id';
+WHERE foodID = :food_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':name', $name);
 $statement->bindValue(':expiryDate', $expiryDate);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':image', $image);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':food_id', $food_id);
 $statement->execute();
 $statement->closeCursor();
 
