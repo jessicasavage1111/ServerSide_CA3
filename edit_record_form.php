@@ -1,3 +1,45 @@
+<script>
+
+function price_validation(){
+    'use strict';
+    var priceformat = "[0-9]+(\.){0,1}[0-9]*";
+    var price = document.getElementById("price");
+    var price_value = document.getElementById("price").value;
+    var price_length = price_value.length;
+    if(!price_value.match(priceformat) || price_length === 0)
+    {
+    document.getElementById('price_err').innerHTML = ' This is not a valid price format. ';
+    price.focus();
+    document.getElementById('price_err').style.color = "#FF0000";
+    }
+    else
+    {
+    document.getElementById('price_err').innerHTML = ' Valid price format';
+    document.getElementById('price_err').style.color = "#00AF33";
+    }
+    }
+
+    function name_validation(){
+    'use strict';
+    var nameformat = "[a-zA-Z ]+$";
+    var name = document.getElementById("name");
+    var name_value = document.getElementById("name").value;
+    var name_length = name_value.length;
+    if(!name_value.match(nameformat) || name_length === 0)
+    {
+    document.getElementById('name_err').innerHTML = ' This is not a valid name format. ';
+    name.focus();
+    document.getElementById('name_err').style.color = "#FF0000";
+    }
+    else
+    {
+    document.getElementById('name_err').innerHTML = ' Valid name format';
+    document.getElementById('name_err').style.color = "#00AF33";
+    }
+    }
+
+</script>
+
 <?php
 require('database.php');
 
@@ -30,7 +72,7 @@ include('includes/header.php');
 
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $food['name']; ?>" required>
+                   value="<?php echo $food['name']; ?>" required id="name" onBlur="name_validation()"><span id="name_err"></span>
             <br>
 
             <label>Expiry Date:</label>
@@ -40,7 +82,7 @@ include('includes/header.php');
 
             <label>List Price:</label>
             <input type="input" name="price"
-                   value="<?php echo $food['price']; ?>" required>
+                   value="<?php echo $food['price']; ?>" required id="price" onBlur="price_validation()"><span id="price_err"></span>
             <br>
 
             <label>Image:</label>
