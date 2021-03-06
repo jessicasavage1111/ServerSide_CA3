@@ -76,7 +76,7 @@ include('includes/header.php');
             <br>
 
             <label>Expiry Date:</label>
-            <input type="date" name="expiryDate"
+            <input type="date" name="expiryDate" id="date" required
                    value="<?php echo $food['expiryDate']; ?>">
             <br>
 
