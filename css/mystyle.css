@@ -36,7 +36,8 @@ nav ul li {
 }
 
 body {
-  background-color: #ccc;
+  background: url("../image_uploads/background.jpg");
+  background-size: cover;
 }
 
 .container {

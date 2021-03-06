@@ -1,5 +1,9 @@
 body {
-    background-color: $bodybackground;
+    background: url("../image_uploads/background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .container {
