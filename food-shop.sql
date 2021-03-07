@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2021 at 07:55 PM
+-- Generation Time: Mar 07, 2021 at 10:10 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -86,6 +86,21 @@ INSERT INTO `food` (`foodID`, `categoryID`, `code`, `name`, `expiryDate`, `price
 (38, 4, '47699', 'Croissants', '2021-03-12', '1.56', '47699.jpeg'),
 (39, 4, '21323', 'M&M Cookies', '2021-03-18', '2.68', '21323.jpeg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `foodName` varchar(255) NOT NULL,
+  `number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -117,7 +132,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `foodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `foodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
