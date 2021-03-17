@@ -86,7 +86,7 @@ include('includes/header.php');
             <br>
 
             <label>Image:</label>
-            <input type="file" name="image" accept="image/*" required/>
+            <input type="file" name="image" accept="image/*"/>
             <br>            
             <?php if ($food['image'] != "") { ?>
             <p><img src="image_uploads/<?php echo $food['image']; ?>" height="150" /></p>
