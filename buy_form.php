@@ -66,6 +66,11 @@ include('includes/header.php');
                 </option>
             <?php endforeach; ?>
             </select><br>
+
+            <?php if ($food['image'] != "") { ?>
+            <p><img src="image_uploads/<?php echo $food['image']; ?>" height="150" /></p>
+            <?php } ?>
+            
             <br>
             <label>Name:</label>
             <input type="input" name="name" id="name" required placeholder="Customer Name">
