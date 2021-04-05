@@ -2,7 +2,9 @@
 $errors = '';
 $myemail = 'D00227023@student.dkit.ie';//<-----Put your DkIT email address here.
 if(empty($_POST['name'])  || 
-   empty($_POST['email']) || 
+   empty($_POST['email']) ||
+   empty($_POST['date']) ||
+   empty($_POST['reason']) || 
    empty($_POST['message']))
 {
     $errors .= "\n Error: all fields are required";
@@ -10,6 +12,8 @@ if(empty($_POST['name'])  ||
 
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
+$date = $_POST['date'];
+$reason = $_POST['reason'];
 $message = $_POST['message']; 
 
 if (!preg_match(
@@ -24,7 +28,7 @@ if( empty($errors))
 	$to = $myemail; 
 	$email_subject = "Contact form submission: $name";
 	$email_body = "You have received a new message. ".
-	" Here are the details:\n Name: $name \n Email: $email_address \n Message \n $message"; 
+	" Here are the details:\n Name: $name \n Email: $email_address \n Date: $date \n Reason: $reason \n Message \n $message"; 
 	
 	$headers = "From: $myemail\n"; 
 	$headers .= "Reply-To: $email_address";

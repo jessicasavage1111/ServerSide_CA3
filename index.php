@@ -107,6 +107,7 @@ value="<?php echo $item['categoryID']; ?>">
 </table>
 <p><a href="add_record_form.php">Add Food</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
+<p><a href="contact-form.html">Contact Us</a></p>
 </section>
 <?php
 include('includes/footer.php');
