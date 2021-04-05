@@ -96,8 +96,12 @@ value="<?php echo $item['foodID']; ?>">
 value="<?php echo $item['categoryID']; ?>">
 <input id="blue-button" type="submit" value="Edit">
 </form></td>
+<<<<<<< HEAD
 
 <td ><form action="buy_form.php" method="post"
+=======
+<td><form action="buy_form.php" method="post"
+>>>>>>> contact-form
 id="delete_record_form">
 <input type="hidden" name="food_id"
 value="<?php echo $item['foodID']; ?>">
@@ -110,6 +114,7 @@ value="<?php echo $item['categoryID']; ?>">
 </table>
 <p><a href="add_record_form.php">Add Food</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
+<p><a href="contact.php">Contact Us</a></p>
 </section>
 <?php
 include('includes/footer.php');

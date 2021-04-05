@@ -67,9 +67,7 @@ include('includes/header.php');
             <?php } ?>
 
             <br>
-            <label>Food id:</label>
-            <input type="input" name="food_id" id="food_id" value="<?php echo $food_id; ?>">
-            <br>
+            <input type="hidden" name="food_id" id="food_id" value="<?php echo $food_id; ?>">
             
             <br>
             <label>Name:</label>

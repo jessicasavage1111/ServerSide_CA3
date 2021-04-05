@@ -40,7 +40,7 @@ if ($category_id == null || $category_id == false ||
         // Check file size '5MB'
             if ($imgSize < 5000000) {
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], $upload_dir . $image)) {
-                    echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+                    
                 } else {
                     $error =  "Sorry, there was an error uploading your file.";
                     include('error.php');
