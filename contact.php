@@ -1,3 +1,4 @@
+<script language="JavaScript" src="gen_validatorv31.js" type="text/javascript"></script>
 <script>
 function name_validation(){
     'use strict';
