@@ -68,7 +68,12 @@ include('includes/header.php');
             <br>
             <label>Reason for Contact:</label>
             <select name="reason">
-                <option> Hello </option>
+                <option> General Question </option>
+                <option> Refund </option>
+                <option> Late Delivery </option>
+                <option> Missing Item </option>
+                <option> Incorrect Item </option>
+                <option> Other </option>
             </select>
             <br>
 
