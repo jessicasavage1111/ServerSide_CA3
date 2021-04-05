@@ -70,6 +70,7 @@ include('includes/header.php');
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
+<th>Buy</th>
 </tr>
 <?php foreach ($food as $item) : ?>
 <tr>
@@ -77,26 +78,36 @@ include('includes/header.php');
 <td><?php echo $item['name']; ?></td>
 <td><?php echo $item['expiryDate']; ?></td>
 <td class="right"><?php echo $item['price']; ?></td>
+
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="food_id"
 value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $item['categoryID']; ?>">
-<input type="submit" value="Delete">
+<input id="red-button" type="submit" value="Delete">
 </form></td>
+
 <td><form action="edit_record_form.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="food_id"
 value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $item['categoryID']; ?>">
-<input type="submit" value="Edit">
+<input id="blue-button" type="submit" value="Edit">
+</form></td>
+
+<td ><form action="buy_form.php" method="post"
+id="delete_record_form">
+<input type="hidden" name="food_id"
+value="<?php echo $item['foodID']; ?>">
+<input type="hidden" name="category_id"
+value="<?php echo $item['categoryID']; ?>">
+<input id="green-button" type="submit" value="Buy">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="buy_form.php">Purchase Food</a></p>
 <p><a href="add_record_form.php">Add Food</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
 </section>

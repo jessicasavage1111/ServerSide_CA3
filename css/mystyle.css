@@ -136,6 +136,28 @@ br {
   clear: both;
 }
 
+#green-button {
+  background-color: #66aa21;
+  padding-left: 2em;
+  padding-right: 2em;
+  color: black;
+  text-align: center;
+}
+
+#red-button {
+  background-color: #ff7676;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+#blue-button {
+  background-color: #add8e6;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
 aside {
   float: left;
   width: 150px;
