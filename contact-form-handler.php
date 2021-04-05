@@ -48,7 +48,21 @@ if( empty($errors))
 <!-- This page is displayed only if there is some error -->
 <?php
 echo nl2br($errors);
+
+$query = "INSERT INTO contact
+                 (name, email, date, reason, message)
+              VALUES
+                 (:name, :email_address, :date, :reason, :message)";
+    $statement = $db->prepare($query);
+    $statement->bindValue(':name', $name);
+    $statement->bindValue(':email_address', $email_address);
+    $statement->bindValue(':date', $date);
+    $statement->bindValue(':reason', $reason);
+    $statement->bindValue(':message', $message);
+    $statement->execute();
+    $statement->closeCursor();
 ?>
+
 
 
 </body>
