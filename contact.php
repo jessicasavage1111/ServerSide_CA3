@@ -86,6 +86,14 @@ include('includes/header.php');
             <input type="submit" value="Submit">
             <br>
         </form>
+
+        <script language="JavaScript">
+        var frmvalidator  = new Validator("contactform");
+        frmvalidator.addValidation("name","req","Please provide your name"); 
+        frmvalidator.addValidation("email","req","Please provide your email"); 
+        frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+        </script>
+        
         <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
