@@ -136,6 +136,46 @@ br {
   clear: both;
 }
 
+.green-button {
+  background-color: #66aa21;
+  padding-left: 2em;
+  padding-right: 2em;
+  color: black;
+  text-align: center;
+}
+
+.red-button {
+  background-color: #ff7676;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+.blue-button {
+  background-color: #add8e6;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+.green-button:hover {
+  background-color: #01af00;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.red-button:hover {
+  background-color: #ff4343;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.blue-button:hover {
+  background-color: #72bcd4;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
 aside {
   float: left;
   width: 150px;
