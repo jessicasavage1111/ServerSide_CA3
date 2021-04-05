@@ -1,4 +1,3 @@
-<script language="JavaScript" src="gen_validatorv31.js" type="text/javascript"></script>
 <script>
 function name_validation(){
     'use strict';
@@ -15,7 +14,7 @@ function name_validation(){
     else
     {
     document.getElementById('name_err').innerHTML = ' Valid name format';
-    document.getElementById('name_err').style.color = "#00AF33";
+    document.getElementById('name_err').style.color = "#00AF33"
     }
     }
 
