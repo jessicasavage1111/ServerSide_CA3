@@ -51,7 +51,7 @@ include('includes/header.php');
             
             <br>
             <label>Name:</label>
-            <input type="input" name="name" id="name" required placeholder="Food Item Name" onBlur="name_validation()"><span id="name_err"></span>
+            <input type="input" name="name" id="name" required placeholder="Customer Name" onBlur="name_validation()"><span id="name_err"></span>
             <br>
 
             <br>

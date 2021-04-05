@@ -49,6 +49,8 @@ if( empty($errors))
 <?php
 echo nl2br($errors);
 
+require_once('database.php');
+
 $query = "INSERT INTO contact
                  (name, email, date, reason, message)
               VALUES

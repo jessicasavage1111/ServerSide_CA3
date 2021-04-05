@@ -19,7 +19,7 @@ if ($name == null || $food_id == null ||
 
     // Add the product to the database 
     $query = "INSERT INTO order
-                 (fooodID, name, address, email, number)
+                 (foodID, name, address, email, number)
               VALUES
                  (:food_id, :name, :address, :email, :number)";
     $statement = $db->prepare($query);
