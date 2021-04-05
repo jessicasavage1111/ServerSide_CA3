@@ -24,7 +24,7 @@ function email_validation(){
     var number_name = document.getElementById("number");
     var number_value = document.getElementById("number").value;
     var number_length = number_value.length;
-    if(number_length === 0 || number_value === 0)
+    if(number_length === 0 || number_value == 0)
     {
     document.getElementById('number_err').innerHTML = 'This is not a valid quanitity.';
     number_name.focus();
@@ -41,12 +41,15 @@ function email_validation(){
 
 <?php
 require('database.php');
+
+$food_id = filter_input(INPUT_POST, 'food_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
           FROM food
-          ORDER BY foodID';
+          WHERE foodID = :food_id';
 $statement = $db->prepare($query);
+$statement->bindValue(':food_id', $food_id);
 $statement->execute();
-$food = $statement->fetchAll();
+$food = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
 <!-- the head section -->
@@ -55,17 +58,16 @@ $statement->closeCursor();
 include('includes/header.php');
 ?>
         <h1>Order Food</h1>
+        <h2>Product : <?php echo $food['name']; ?></h2>
         <form action="buy.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
-            <label>Product:</label>
-            <select name="foodName" id="foodName">
-            <?php foreach ($food as $food) : ?>
-                <option value="<?php echo $food['foodID']; ?>">
-                    <?php echo $food['name']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select><br>
+            <?php if ($food['image'] != "") { ?>
+            <p><img src="image_uploads/<?php echo $food['image']; ?>" height="150" /></p>
+            <?php } ?>
+
+            <input type="hidden" name="food_id" id="food_id" value="<?php echo $food_id; ?>">
+            
             <br>
             <label>Name:</label>
             <input type="input" name="name" id="name" required placeholder="Customer Name">
@@ -87,7 +89,7 @@ include('includes/header.php');
             <br>
             
             <label>&nbsp;</label>
-            <input id="green-button"type="submit" value="Continue">
+            <input type="submit" value="Purchase">
             <br>
         </form>
         <p><a href="index.php">View Homepage</a></p>
