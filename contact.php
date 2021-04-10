@@ -45,7 +45,7 @@ function name_validation(){
 include('includes/header.php');
 ?>
         <h1>Contact Us</h1>
-        <form action="contact-form-handler.php" method="post" enctype="multipart/form-data"
+        <form action="contact-form-handler.php" name="contactform" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
             

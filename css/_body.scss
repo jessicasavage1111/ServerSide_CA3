@@ -88,18 +88,36 @@ br {
     clear: both;
   }
   
-
-  .green-button:hover {
-    background-color: #01af00;
-    transition-duration: 0.5s;
+  .green-button {
+    background-color: #66aa21;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: black;
+    text-align: center;
+    :hover {
+        background-color: #01af00;
+        transition-duration: 0.5s;
+    }
 }
 
-.red-button:hover {
-    background-color: #ff4343;
-    transition-duration: 0.5s;
+.red-button {
+    background-color: #ff7676;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    :hover {
+        background-color: #ff4343;
+        transition-duration: 0.5s;
+    }
 }
 
-.blue-button:hover {
-    background-color: #72bcd4;
-    transition-duration: 0.5s;
+.blue-button {
+    background-color: #add8e6;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    :hover {
+        background-color: #72bcd4;
+        transition-duration: 0.5s;
+    }
 }

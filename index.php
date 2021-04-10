@@ -85,7 +85,7 @@ id="delete_record_form">
 value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $item['categoryID']; ?>">
-<input id="red-button" type="submit" value="Delete">
+<input class="red-button" type="submit" value="Delete">
 </form></td>
 
 <td><form action="edit_record_form.php" method="post"
@@ -94,7 +94,7 @@ id="delete_record_form">
 value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $item['categoryID']; ?>">
-<input id="blue-button" type="submit" value="Edit">
+<input class="blue-button" type="submit" value="Edit">
 </form></td>
 <td><form action="buy_form.php" method="post"
 id="delete_record_form">
@@ -102,7 +102,7 @@ id="delete_record_form">
 value="<?php echo $item['foodID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $item['categoryID']; ?>">
-<input id="green-button" type="submit" value="Buy">
+<input class="green-button" type="submit" value="Buy">
 </form></td>
 </tr>
 <?php endforeach; ?>
