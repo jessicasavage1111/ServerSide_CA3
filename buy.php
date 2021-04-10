@@ -8,8 +8,6 @@ $email = filter_input(INPUT_POST, 'email');
 $number = filter_input(INPUT_POST, 'number', FILTER_VALIDATE_INT);
 
 // Validate inputs
-if ($name == null || $address == null || $email == null || $number == null || $number == false ) {
-=======
 if ($name == null || $food_id == null ||
     $address == null || $email == null || $number == null || $number == false ) {
     $error = "Invalid product data. Check all fields and try again.";
