@@ -87,7 +87,7 @@ include('includes/header.php');
             <input type="text" id="username" name="username"><br><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br><br>
-            <input type="submit" name="register" value="Register"></button><br>
+            <input type="submit" name="register" value="Register" class="green-button"></button><br>
         </form>
         <?php
 include('includes/footer.php');
