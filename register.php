@@ -77,20 +77,18 @@ if(isset($_POST['register'])){
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Register</title>
-    </head>
-    <body>
+<div class="container">
+<?php
+include('includes/header.php');
+?>
         <h1>Register</h1>
-        <form action="register.php" method="post">
+        <form action="register.php" method="post" id="add_record_form">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
+            <input type="text" id="username" name="username"><br><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
-            <input type="submit" name="register" value="Register"></button>
+            <input type="text" id="password" name="password"><br><br>
+            <input type="submit" name="register" value="Register"></button><br>
         </form>
-    </body>
-</html>
+        <?php
+include('includes/footer.php');
+?>

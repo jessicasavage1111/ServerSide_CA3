@@ -72,20 +72,19 @@ if(isset($_POST['login'])){
 }
  
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-    </head>
-    <body>
+
+<div class="container">
+<?php
+include('includes/header.php');
+?>
         <h1>Login</h1>
-        <form action="login.php" method="post">
+        <form action="login.php" method="post" id="add_record_form">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
+            <input type="text" id="username" name="username"><br><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
-            <input type="submit" name="login" value="Login">
+            <input type="text" id="password" name="password"><br><br>
+            <input type="submit" name="login" value="Login"><br>
         </form>
-    </body>
-</html>
+<?php
+include('includes/footer.php');
+?>
