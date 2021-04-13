@@ -96,7 +96,6 @@ include('includes/header.php');
             <input type="submit" value="Save Changes">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>

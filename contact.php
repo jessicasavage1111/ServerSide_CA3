@@ -94,7 +94,6 @@ include('includes/header.php');
         frmvalidator.addValidation("email","email","Please enter a valid email address"); 
         </script>
         
-        <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>

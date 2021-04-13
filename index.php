@@ -107,9 +107,6 @@ value="<?php echo $item['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Food</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
-<p><a href="contact.php">Contact Us</a></p>
 </section>
 <?php
 include('includes/footer.php');
