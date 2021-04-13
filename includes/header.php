@@ -10,9 +10,9 @@
 <header><center><h1>The Savage Food Shop</h1></center>
 
 <div class="topnav">
-  <a class="active" href="index.php">Home</a>
-  <a href="add_record_form.php">Add Pet</a>
-  <a href="category_list.php">Manage Categories</a>
   <a href="contact.php">Contact</a>
+  <a href="category_list.php">Manage Categories</a>
+  <a href="add_record_form.php">Add Pet</a>
+  <a class="active" href="index.php">Home</a>
 </div>
 </header>
