@@ -89,35 +89,35 @@ br {
   }
   
   .green-button {
-    background-color: #3ddf38;
+    background-color: $greenButton;
     padding-left: 2em;
     padding-right: 2em;
-    color: black;
+    color: $black;
     text-align: center;
     :hover {
-        background-color: #01af00;
+        background-color: $greenButtonHover;
         transition-duration: 0.5s;
     }
 }
 
 .red-button {
-    background-color: #ff7676;
+    background-color: $redButton;
     padding-left: 2em;
     padding-right: 2em;
     text-align: center;
     :hover {
-        background-color: #ff4343;
+        background-color: $redButtonHover;
         transition-duration: 0.5s;
     }
 }
 
 .blue-button {
-    background-color: #add8e6;
+    background-color: $blueButton;
     padding-left: 2em;
     padding-right: 2em;
     text-align: center;
     :hover {
-        background-color: #72bcd4;
+        background-color: $blueButtonHover;
         transition-duration: 0.5s;
     }
 }
