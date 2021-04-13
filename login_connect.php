@@ -19,7 +19,7 @@ define('MYSQL_PASSWORD', 'root');
 define('MYSQL_HOST', 'localhost');
 
 //The name of our database.
-define('MYSQL_DATABASE', 'shoes');
+define('MYSQL_DATABASE', 'ca2db');
 
 /**
  * PDO options / configuration details.
@@ -35,7 +35,7 @@ $pdoOptions = array(
  * Connect to MySQL and instantiate the PDO object.
  */
 $pdo = new PDO(
-    "mysql:host=" . MYSQL_HOST . ";dbname=" . MYSQL_DATABASE, //DSN
+    "mysql:host=" . MYSQL_HOST. ";dbname=" . MYSQL_DATABASE, //DSN
     MYSQL_USER, //Username
     MYSQL_PASSWORD, //Password
     $pdoOptions //Options

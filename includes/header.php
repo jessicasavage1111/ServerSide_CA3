@@ -10,8 +10,9 @@
 <header><center><h1>The Savage Food Shop</h1></center>
 
 <div class="topnav">
-<a href="logout.php">Logout</a>
+  <a href="logout.php">Logout</a>
   <a href="login.php">Login</a>
+  <a href="register.php">Register</a>
   <a href="contact.php">Contact</a>
   <a href="category_list.php">Manage Categories</a>
   <a href="add_record_form.php">Add Pet</a>
