@@ -25,6 +25,7 @@ if(isset($_POST['register'])){
     //Retrieve the field values from our registration form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
     $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    $confirm = !empty($_POST['confirm']) ? trim($_POST['confirm']) : null;
     
     //TO ADD: Error checking (username characters, password length, etc).
     //Basically, you will need to add your own error checking BEFORE
@@ -66,12 +67,17 @@ if(isset($_POST['register'])){
     $stmt->bindValue(':password', $passwordHash);
 
     //Execute the statement and insert the new account.
-    $result = $stmt->execute();
+    if($pass === $confirm){
+        $result = $stmt->execute();
+    }
     
     //If the signup process is successful.
     if($result){
         //What you do here is up to you!
         echo 'Thank you for registering with our website.';
+    }
+    else{
+        echo 'User could not be created. Please check your username, password and confirm password';
     }
     
 }
@@ -87,6 +93,8 @@ include('includes/header.php');
             <input type="text" id="username" name="username"><br><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br><br>
+            <label for="confirm">Confirm Password</label>
+            <input type="text" id="confirm" name="confirm"><br><br>
             <input type="submit" name="register" value="Register" class="green-button"></button><br>
         </form>
         <?php
