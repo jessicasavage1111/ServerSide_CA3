@@ -1,5 +1,5 @@
-<script>
 
+<script>
 function price_validation(){
     'use strict';
     var priceformat = "[0-9]+(\.){0,1}[0-9]*";
@@ -41,6 +41,21 @@ function price_validation(){
 </script>
 
 <?php
+
+/**
+ * Start the session.
+ */
+session_start();
+
+/**
+ * Check if the user is logged in.
+ */
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
 require('database.php');
 $query = 'SELECT *
           FROM categories
