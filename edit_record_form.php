@@ -93,7 +93,7 @@ include('includes/header.php');
             <?php } ?>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Save Changes">
+            <input type="submit" value="Save Changes" class="green-button">
             <br>
         </form>
     <?php

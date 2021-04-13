@@ -86,7 +86,7 @@ include('includes/header.php');
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Add Food">
+            <input type="submit" value="Add Food" class="blue-button">
             <br>
         </form>
     <?php

@@ -90,7 +90,7 @@ include('includes/header.php');
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Purchase">
+            <input type="submit" value="Purchase" class="green-button">
             <br>
         </form>
         <p><a href="index.php">View Homepage</a></p>
