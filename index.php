@@ -68,8 +68,6 @@ include('includes/header.php');
 <th>Name</th>
 <th>Expiry Date</th>
 <th>Price</th>
-<th>Delete</th>
-<th>Edit</th>
 <th>Buy</th>
 </tr>
 <?php foreach ($food as $item) : ?>
@@ -79,23 +77,6 @@ include('includes/header.php');
 <td><?php echo $item['expiryDate']; ?></td>
 <td class="right"><?php echo $item['price']; ?></td>
 
-<td><form action="delete_record.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="food_id"
-value="<?php echo $item['foodID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $item['categoryID']; ?>">
-<input class="red-button" type="submit" value="Delete">
-</form></td>
-
-<td><form action="edit_record_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="food_id"
-value="<?php echo $item['foodID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $item['categoryID']; ?>">
-<input class="blue-button" type="submit" value="Edit">
-</form></td>
 <td><form action="buy_form.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="food_id"
