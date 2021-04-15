@@ -6,7 +6,6 @@ include('includes/header.php');
         
         <p>Thank you for submitting the form. We will contact you soon!</p>
         
-        <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>
