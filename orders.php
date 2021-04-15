@@ -94,8 +94,6 @@ include('includes/header.php');
 id="delete_record_form">
 <input type="hidden" name="order_id"
 value="<?php echo $item['orderID']; ?>">
-<input type="hidden" name="order_id"
-value="<?php echo $item['orderID']; ?>">
 <input class="green-button" type="submit" value="Edit">
 </form></td>
 </tr>
