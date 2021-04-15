@@ -32,5 +32,5 @@ if ($name == null || $food_id == null || $food_id == false ||
     $statement->closeCursor();
 
     // Display the Product List page
-    include('index.php');
+    include('buy_thank_you.php');
 }
