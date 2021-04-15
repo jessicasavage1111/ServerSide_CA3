@@ -76,7 +76,7 @@ include('includes/header.php');
 <table>
 <tr>
 <th>Name</th>
-<th>Adress</th>
+<th>Address</th>
 <th>Email</th>
 <th>Item</th>
 <th>Quantity</th>
@@ -90,12 +90,12 @@ include('includes/header.php');
 <td><?php echo $item['foodID']; ?></td>
 <td class="right"><?php echo $item['number']; ?></td>
 
-<td><form action="buy_form.php" method="post"
+<td><form action="edit_order_form.php" method="post"
 id="delete_record_form">
-<input type="hidden" name="delivery_id"
-value="<?php echo $item['deliveryID']; ?>">
-<input type="hidden" name="delivery_id"
-value="<?php echo $item['deliveryID']; ?>">
+<input type="hidden" name="order_id"
+value="<?php echo $item['orderID']; ?>">
+<input type="hidden" name="order_id"
+value="<?php echo $item['orderID']; ?>">
 <input class="green-button" type="submit" value="Edit">
 </form></td>
 </tr>

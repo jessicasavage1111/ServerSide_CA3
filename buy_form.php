@@ -24,7 +24,7 @@ function email_validation(){
     var number_name = document.getElementById("number");
     var number_value = document.getElementById("number").value;
     var number_length = number_value.length;
-    if(number_length === 0 || number_value == 0)
+    if(number_length === 0 || number_value <= 0)
     {
     document.getElementById('number_err').innerHTML = 'This is not a valid quanitity.';
     number_name.focus();

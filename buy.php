@@ -6,6 +6,7 @@ $name = filter_input(INPUT_POST, 'name');
 $address = filter_input(INPUT_POST, 'address');
 $email = filter_input(INPUT_POST, 'email');
 $number = filter_input(INPUT_POST, 'number', FILTER_VALIDATE_INT);
+$delivery_id = 3;
 
 // Validate inputs
 if ($name == null || $food_id == null || $food_id == false ||
@@ -19,10 +20,11 @@ if ($name == null || $food_id == null || $food_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO orders
-                 (foodID, name, address, email, number)
+                 (foodID, deliveryID, name, address, email, number)
               VALUES
-                 (:food_id, :name, :address, :email, :number)";
+                 (:food_id, :delivery_id, :name, :address, :email, :number)";
     $statement = $db->prepare($query);
+    $statement->bindValue(':delivery_id', $delivery_id);
     $statement->bindValue(':food_id', $food_id);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':address', $address);
