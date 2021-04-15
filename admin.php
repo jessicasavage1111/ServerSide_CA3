@@ -123,6 +123,7 @@ value="<?php echo $item['categoryID']; ?>">
 <?php endforeach; ?>
 </table>
 <p><a href="orders.php">View Orders</a></p>
+<p><a href="users.php">View Users</a></p>
 <p><a href="add_record_form.php">Add Food</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
 </section>

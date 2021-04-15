@@ -5,8 +5,8 @@ $user_id = filter_input(INPUT_POST, 'user_id', FILTER_VALIDATE_INT);
 
 // Get records for selected category
 $queryRecords = "SELECT * FROM users
-WHERE id = :user_id
-ORDER BY id";
+WHERE userID = :user_id
+ORDER BY userID";
 $statement3 = $db->prepare($queryRecords);
 $statement3->bindValue(':user_id', $user_id);
 $statement3->execute();
