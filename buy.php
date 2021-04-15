@@ -8,7 +8,7 @@ $email = filter_input(INPUT_POST, 'email');
 $number = filter_input(INPUT_POST, 'number', FILTER_VALIDATE_INT);
 
 // Validate inputs
-if ($name == null || $food_id == null ||
+if ($name == null || $food_id == null || $food_id == false ||
     $address == null || $email == null || $number == null || $number == false ) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
@@ -18,7 +18,7 @@ if ($name == null || $food_id == null ||
     require_once('database.php');
 
     // Add the product to the database 
-    $query = "INSERT INTO order
+    $query = "INSERT INTO orders
                  (foodID, name, address, email, number)
               VALUES
                  (:food_id, :name, :address, :email, :number)";
